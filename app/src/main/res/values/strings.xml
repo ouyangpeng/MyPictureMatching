@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
     <string name="app_name">疯狂连连看</string>
     <string name="game_time">剩余时间：</string>
+    <string name="lost">Lost</string>
+    <string name="lost_restart">游戏失败！ 重新开始</string>
+    <string name="dialog_sure">确定</string>
+    <string name="success">Success</string>
+    <string name="success_restart">游戏胜利！ 重新开始</string>
+    <string name="remaining_time">剩余时间:%1$d</string>
 </resources>

@@ -28,11 +28,10 @@
             android:id="@+id/timeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="150px"
+            android:layout_marginLeft="10dp"
             android:gravity="center"
             android:textColor="#ff9"
-            android:textSize="20dip"
-            tools:text="60s"
-           />
+            android:textSize="20sp"
+            tools:text="剩余时间:60" />
     </LinearLayout>
 </RelativeLayout>

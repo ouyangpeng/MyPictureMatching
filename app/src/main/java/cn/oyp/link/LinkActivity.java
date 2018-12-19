@@ -1,5 +1,6 @@
 package cn.oyp.link;
 
+import java.lang.ref.WeakReference;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -29,7 +30,7 @@ import cn.oyp.link.view.Piece;
  * <br/>
  * 关于本代码介绍可以参考一下博客: <a href="http://blog.csdn.net/ouyang_peng">欧阳鹏的CSDN博客</a> <br/>
  */
-public class LinkActivity extends Activity {
+public class LinkActivity extends Activity implements BaseHandlerCallBack {
     /**
      * 游戏配置对象
      */
@@ -81,31 +82,17 @@ public class LinkActivity extends Activity {
     /**
      * Handler类，异步处理
      */
-    private Handler handler = new Handler() {
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 0x123:
-                    timeTextView.setText("剩余时间:" + gameTime);
-                    gameTime--; // 游戏剩余时间减少
-                    // 时间小于0, 游戏失败
-                    if (gameTime < 0) {
-                        // 停止计时
-                        stopTimer();
-                        // 更改游戏的状态
-                        isPlaying = false;
-                        // 失败后弹出对话框
-                        lostDialog.show();
-                        return;
-                    }
-                    break;
-            }
-        }
-    };
+    private NoLeakHandler handler;
+    /**
+     * Handler发送消息的ID
+     */
+    private final int MESSAGE_ID = 0x123;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        handler = new NoLeakHandler(this);
         // 初始化界面
         init();
     }
@@ -138,7 +125,7 @@ public class LinkActivity extends Activity {
         this.gameView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent e) {
-                if (!isPlaying){
+                if (!isPlaying) {
                     return false;
                 }
                 if (e.getAction() == MotionEvent.ACTION_DOWN) {
@@ -151,16 +138,16 @@ public class LinkActivity extends Activity {
             }
         });
         // 初始化游戏失败的对话框
-        lostDialog = createDialog("Lost", "游戏失败！ 重新开始", R.drawable.lost)
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+        lostDialog = createDialog(getString(R.string.lost), getString(R.string.lost_restart), R.drawable.lost)
+                .setPositiveButton(R.string.dialog_sure, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         startGame(GameConf.DEFAULT_TIME);
                     }
                 });
         // 初始化游戏胜利的对话框
-        successDialog = createDialog("Success", "游戏胜利！ 重新开始",
-                R.drawable.success).setPositiveButton("确定",
+        successDialog = createDialog(getString(R.string.success), getString(R.string.success_restart),
+                R.drawable.success).setPositiveButton(R.string.dialog_sure,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -261,7 +248,7 @@ public class LinkActivity extends Activity {
         this.timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                handler.sendEmptyMessage(0x123);
+                handler.sendEmptyMessage(MESSAGE_ID);
             }
         }, 0, 1000);
         // 将选中方块设为null。
@@ -322,5 +309,44 @@ public class LinkActivity extends Activity {
         // 停止定时器
         this.timer.cancel();
         this.timer = null;
+    }
+
+    @Override
+    public void callBack(Message msg) {
+        switch (msg.what) {
+            case MESSAGE_ID:
+                timeTextView.setText(String.format(getString(R.string.remaining_time), gameTime));
+                gameTime--; // 游戏剩余时间减少
+                // 时间小于0, 游戏失败
+                if (gameTime < 0) {
+                    // 停止计时
+                    stopTimer();
+                    // 更改游戏的状态
+                    isPlaying = false;
+                    // 失败后弹出对话框
+                    lostDialog.show();
+                    return;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    private static class NoLeakHandler<T extends BaseHandlerCallBack> extends Handler {
+        private WeakReference<T> wr;
+
+        private NoLeakHandler(T t) {
+            wr = new WeakReference<>(t);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            T t = wr.get();
+            if (t != null) {
+                t.callBack(msg);
+            }
+        }
     }
 }
