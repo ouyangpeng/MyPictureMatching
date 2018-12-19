@@ -1,11 +1,7 @@
 package cn.oyp.link.view;
 
-import java.util.List;
-
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -13,7 +9,8 @@ import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.View;
 
-import cn.oyp.link.R;
+import java.util.List;
+
 import cn.oyp.link.board.GameService;
 import cn.oyp.link.utils.ImageUtil;
 import cn.oyp.link.utils.LinkInfo;
@@ -107,7 +104,7 @@ public class GameView extends View {
                     if (pieces[i][j] != null) {
                         // 得到这个Piece对象
                         Piece piece = pieces[i][j];
-                        if (piece.getPieceImage()!= null){
+                        if (piece.getPieceImage() != null) {
                             // 根据方块左上角X、Y座标绘制方块
                             canvas.drawBitmap(piece.getPieceImage().getImage(), piece.getBeginX(), piece.getBeginY(), null);
                         }
@@ -132,10 +129,8 @@ public class GameView extends View {
     /**
      * 根据LinkInfo绘制连接线的方法。
      *
-     * @param linkInfo
-     *            连接信息对象
-     * @param canvas
-     *            画布
+     * @param linkInfo 连接信息对象
+     * @param canvas   画布
      */
     private void drawLine(LinkInfo linkInfo, Canvas canvas) {
         // 获取LinkInfo中封装的所有连接点

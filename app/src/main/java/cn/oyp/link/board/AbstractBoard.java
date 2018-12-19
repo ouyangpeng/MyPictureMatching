@@ -35,9 +35,6 @@ public abstract class AbstractBoard {
         // 根据非空Piece对象的集合的大小来取图片
         List<PieceImage> playImages = ImageUtil.getPlayImages(config.getContext(), notNullPieces.size());
         // 所有图片的宽、高都是相同的
-//        int imageWidth = playImages.get(0).getImage().getWidth();
-//        int imageHeight = playImages.get(0).getImage().getHeight();
-
         int imageWidth = GameConf.PIECE_WIDTH;
         int imageHeight = GameConf.PIECE_HEIGHT;
 
@@ -47,7 +44,7 @@ public abstract class AbstractBoard {
             Piece piece = notNullPieces.get(i);
             piece.setPieceImage(playImages.get(i));
             // 计算每个方块左上角的X、Y座标
-            piece.setBeginX(piece.getIndexX() * imageWidth  + config.getBeginImageX());
+            piece.setBeginX(piece.getIndexX() * imageWidth + config.getBeginImageX());
             piece.setBeginY(piece.getIndexY() * imageHeight + config.getBeginImageY());
             // 将该方块对象放入方块数组的相应位置处
             pieces[piece.getIndexX()][piece.getIndexY()] = piece;

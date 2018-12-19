@@ -1,17 +1,17 @@
 package cn.oyp.link.utils;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 import cn.oyp.link.R;
 import cn.oyp.link.view.PieceImage;
@@ -23,12 +23,12 @@ import cn.oyp.link.view.PieceImage;
  */
 public class ImageUtil {
     /**
-     *  保存所有连连看图片资源值(int类型)
+     * 保存所有连连看图片资源值(int类型)
      */
     private static List<Integer> imageValues = getImageValues();
 
     /**
-     *  获取连连看所有图片的ID（约定所有图片ID以p_开头）
+     * 获取连连看所有图片的ID（约定所有图片ID以p_开头）
      */
     public static List<Integer> getImageValues() {
         try {
@@ -50,10 +50,8 @@ public class ImageUtil {
     /**
      * 随机从sourceValues的集合中获取size个图片ID, 返回结果为图片ID的集合
      *
-     * @param sourceValues
-     *            从中获取的集合
-     * @param size
-     *            需要获取的个数
+     * @param sourceValues 从中获取的集合
+     * @param size         需要获取的个数
      * @return size个图片ID的集合
      */
     public static List<Integer> getRandomValues(List<Integer> sourceValues,
@@ -80,8 +78,7 @@ public class ImageUtil {
     /**
      * 从drawable目录中中获取size个图片资源ID(以p_为前缀的资源名称), 其中size为游戏数量
      *
-     * @param size
-     *            需要获取的图片ID的数量
+     * @param size 需要获取的图片ID的数量
      * @return size个图片ID的集合
      */
     public static List<Integer> getPlayValues(int size) {
@@ -119,9 +116,9 @@ public class ImageUtil {
         return result;
     }
 
-    public static Bitmap drawableToBitmap (Drawable drawable) {
+    public static Bitmap drawableToBitmap(Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
-            return ((BitmapDrawable)drawable).getBitmap();
+            return ((BitmapDrawable) drawable).getBitmap();
         }
         Bitmap bitmap = Bitmap.createBitmap(GameConf.PIECE_WIDTH, GameConf.PIECE_HEIGHT, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
@@ -132,7 +129,8 @@ public class ImageUtil {
 
 
     /**
-     *  获取选中标识的图片
+     * 获取选中标识的图片
+     *
      * @param context
      * @return 选中标识的图片
      */

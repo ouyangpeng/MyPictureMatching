@@ -48,18 +48,12 @@ public class GameConf {
     /**
      * 提供一个参数构造器
      *
-     * @param xSize
-     *            Piece[][]数组第一维长度
-     * @param ySize
-     *            Piece[][]数组第二维长度
-     * @param beginImageX
-     *            Board中第一张图片出现的x座标
-     * @param beginImageY
-     *            Board中第一张图片出现的y座标
-     * @param gameTime
-     *            设置每局的时间, 单位是豪秒
-     * @param context
-     *            应用上下文
+     * @param xSize       Piece[][]数组第一维长度
+     * @param ySize       Piece[][]数组第二维长度
+     * @param beginImageX Board中第一张图片出现的x座标
+     * @param beginImageY Board中第一张图片出现的y座标
+     * @param gameTime    设置每局的时间, 单位是豪秒
+     * @param context     应用上下文
      */
     public GameConf(int xSize, int ySize, int beginImageX, int beginImageY,
                     long gameTime, Context context) {

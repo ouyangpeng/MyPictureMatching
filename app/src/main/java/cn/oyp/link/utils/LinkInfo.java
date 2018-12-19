@@ -1,9 +1,9 @@
 package cn.oyp.link.utils;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import android.graphics.Point;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 连接信息类<br/>
