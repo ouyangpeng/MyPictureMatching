@@ -107,7 +107,6 @@ public class ImageUtil {
         // 遍历每个图片ID
         for (Integer value : resourceValues) {
             // 加载图片
-//            Bitmap bm = BitmapFactory.decodeResource(context.getResources(), value);
             Bitmap bm = drawableToBitmap(context.getResources().getDrawable(value));
             // 封装图片ID与图片本身
             PieceImage pieceImage = new PieceImage(bm, value);
@@ -116,6 +115,9 @@ public class ImageUtil {
         return result;
     }
 
+    /**
+     * 将Drawable转换为Bitmap
+     */
     public static Bitmap drawableToBitmap(Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
             return ((BitmapDrawable) drawable).getBitmap();
