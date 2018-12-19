@@ -9,6 +9,7 @@
 >下面是该游戏的预览图片
 
 - 1、游戏最开始的界面，可以点击“开始”按钮开始游戏
+
 ![](https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/a7.jpg)
 
 - 2、点击“开始”按钮后，会显示出计时文本框，并开始计时。
@@ -18,6 +19,7 @@
 ![](https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/a4.jpg)
 
 - 3、游戏过程中
+
 ![](https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/a2.jpg)
 
 
