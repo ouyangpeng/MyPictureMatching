@@ -11,11 +11,11 @@ public class GameConf {
     /**
      * 连连看的每个方块的图片的宽
      */
-    public static final int PIECE_WIDTH = 100;
+    public static final int PIECE_WIDTH = 120;
     /**
      * 连连看的每个方块的图片的高s
      */
-    public static final int PIECE_HEIGHT = 100;
+    public static final int PIECE_HEIGHT = 120;
     /**
      * 记录游戏的总事件（100秒）.
      */

@@ -36,8 +36,8 @@ public class ImageUtil {
             Field[] drawableFields = R.drawable.class.getFields();
             List<Integer> resourceValues = new ArrayList<Integer>();
             for (Field field : drawableFields) {
-                // 如果该Field的名称以p_开头
-                if (field.getName().indexOf("p_") != -1) {
+                // 如果该Field的名称以fruit_开头
+                if (field.getName().indexOf("fruit_") != -1) {
                     resourceValues.add(field.getInt(R.drawable.class));
                 }
             }
@@ -122,9 +122,9 @@ public class ImageUtil {
         if (drawable instanceof BitmapDrawable) {
             return ((BitmapDrawable) drawable).getBitmap();
         }
-        Bitmap bitmap = Bitmap.createBitmap(GameConf.PIECE_WIDTH, GameConf.PIECE_HEIGHT, Bitmap.Config.ARGB_8888);
+        Bitmap bitmap = Bitmap.createBitmap(GameConf.PIECE_WIDTH, GameConf.PIECE_HEIGHT, Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(bitmap);
-        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.setBounds(0, 0,GameConf.PIECE_WIDTH, GameConf.PIECE_HEIGHT);
         drawable.draw(canvas);
         return bitmap;
     }
