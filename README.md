@@ -10,22 +10,22 @@
 
 - 1、游戏最开始的界面，可以点击“开始”按钮开始游戏
 
-![](http://img.blog.csdn.net/20131104050550046?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb3V5YW5nX3Blbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/a1.jpg)
 
 - 2、点击“开始”按钮后，会显示出计时文本框，并开始计时。
 
-![](http://img.blog.csdn.net/20131104050705218?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb3V5YW5nX3Blbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/a3.jpg)
+![](https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/a4.jpg)
 
 - 3、游戏过程中
+![](https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/a2.jpg)
 
-![](http://img.blog.csdn.net/20131104051824484)
 
 - 4、游戏结果：成功或者失败
 
-![](http://img.blog.csdn.net/20131104051033281?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb3V5YW5nX3Blbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/a5.jpg)
 
-![](http://img.blog.csdn.net/20131104051055671?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb3V5YW5nX3Blbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-
+![](https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/a6.jpg)
 
 
 >开发这个流行的小游戏，难度适中，而且能充分激发学习热情，适合Android初学者来说是一个不错的选择。对于该游戏的开发，需要重点掌握单机游戏的界面分析和数据建模能力：游戏玩家严重看到的是游戏界面，但是在开发者眼中看到的应该是数据模型。除此之外，单机游戏通常需要一个比较美观的界面，需要通过自定义View来实现游戏主界面。
