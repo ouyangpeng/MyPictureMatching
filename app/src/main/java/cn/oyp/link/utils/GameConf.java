@@ -9,6 +9,23 @@ import android.content.Context;
  */
 public class GameConf {
     /**
+     * X轴有几个方块
+     */
+    public final static int PIECE_X_SUM = 8;
+    /**
+     * Y轴有几个方块
+     */
+    public final  static int PIECE_Y_SUM = 8;
+    /**
+     * 从哪里开始画第一张图片出现的x座标
+     */
+    public final  static int BEGIN_IMAGE_X = 50;
+    /**
+     * 从哪里开始画第一张图片出现的x座标
+     */
+    public final  static int BEGIN_IMAGE_Y = 200;
+
+    /**
      * 连连看的每个方块的图片的宽   启动的时候赋值
      */
     public static int PIECE_WIDTH;

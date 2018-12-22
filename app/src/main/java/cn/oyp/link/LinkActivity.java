@@ -103,8 +103,7 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
      * 初始化游戏的方法
      */
     private void init() {
-        config = new GameConf(8, 8, 2, 10, GameConf.DEFAULT_TIME, this);
-
+        config = new GameConf(GameConf.PIECE_X_SUM, GameConf.PIECE_X_SUM, GameConf.BEGIN_IMAGE_X, GameConf.BEGIN_IMAGE_Y, GameConf.DEFAULT_TIME, this);
         // 得到游戏区域对象
         gameView = (GameView) findViewById(R.id.gameView);
         // 获取显示剩余时间的文本框
@@ -161,7 +160,7 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
 
     /**
      * getWidth()和getHeight()，只有在View布局完成之后才会有值
-     *
+     * <p>
      * 当Activity的焦点发生改变时调用，onWindowFocusChanged()会在onResume（）方法执行之后调用，
      * Activity的生命周期方法与 View的绘制流程方法的执行顺序到底是怎样的呢？
      * onCreate()→onResume()→onMeasure()→onLayout()→onWindowFocusChanged()→.....→onDraw()...
@@ -178,16 +177,13 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
 
         int gameViewWidth = gameView.getWidth();
         int gameViewHeight = gameView.getHeight();
-        Log.e("LinkActivity："," gameViewWidth = " + gameViewWidth + "，gameViewHeight =" + gameViewHeight);
-
-
-
+        Log.e("LinkActivity：", " gameViewWidth = " + gameViewWidth + "，gameViewHeight =" + gameViewHeight);
 
 
         // 每个 方块的 宽度 等于 公共画盘的宽度 / x方向的个数
-        int tempWidth = gameViewWidth / config.getXSize();
+        int tempWidth = (gameViewWidth - GameConf.BEGIN_IMAGE_X) / GameConf.PIECE_X_SUM;
         // 每个 方块的 高度 等于 公共画盘的高度 / y方向的个数
-        int tempHeight = gameViewHeight / config.getYSize();
+        int tempHeight = (gameViewHeight - GameConf.BEGIN_IMAGE_Y) / GameConf.PIECE_Y_SUM;
         int sideLengthOfSquare = tempWidth > tempHeight ? tempHeight : tempWidth;
         GameConf.PIECE_WIDTH = sideLengthOfSquare;
         // 每个 方块的 高度 等于 公共画盘的高度 / y方向的个数
@@ -195,9 +191,7 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
 
         Log.d(TAG, " tempWidth =" + tempWidth + "， tempHeight =" + tempHeight);
         Log.d(TAG, " GameConf.PIECE_WIDTH =" + GameConf.PIECE_WIDTH + "， GameConf.PIECE_HEIGHT =" + GameConf.PIECE_HEIGHT);
-
     }
-
 
     @Override
     protected void onPause() {
