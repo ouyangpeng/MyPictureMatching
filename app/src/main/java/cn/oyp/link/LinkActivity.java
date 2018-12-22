@@ -180,14 +180,22 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
         int gameViewHeight = gameView.getHeight();
         Log.e("LinkActivity："," gameViewWidth = " + gameViewWidth + "，gameViewHeight =" + gameViewHeight);
 
+
+
+
+
         // 每个 方块的 宽度 等于 公共画盘的宽度 / x方向的个数
-        GameConf.PIECE_WIDTH = gameViewWidth / config.getXSize();
+        int tempWidth = gameViewWidth / config.getXSize();
         // 每个 方块的 高度 等于 公共画盘的高度 / y方向的个数
-        GameConf.PIECE_HEIGHT = gameViewHeight / config.getYSize();
+        int tempHeight = gameViewHeight / config.getYSize();
+        int sideLengthOfSquare = tempWidth > tempHeight ? tempHeight : tempWidth;
+        GameConf.PIECE_WIDTH = sideLengthOfSquare;
+        // 每个 方块的 高度 等于 公共画盘的高度 / y方向的个数
+        GameConf.PIECE_HEIGHT = sideLengthOfSquare;
 
+        Log.d(TAG, " tempWidth =" + tempWidth + "， tempHeight =" + tempHeight);
+        Log.d(TAG, " GameConf.PIECE_WIDTH =" + GameConf.PIECE_WIDTH + "， GameConf.PIECE_HEIGHT =" + GameConf.PIECE_HEIGHT);
 
-        Log.d(TAG, " GameConf.PIECE_WIDTH =" + GameConf.PIECE_WIDTH);
-        Log.d(TAG, " GameConf.PIECE_HEIGHT =" + GameConf.PIECE_HEIGHT);
     }
 
 
