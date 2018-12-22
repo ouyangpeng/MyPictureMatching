@@ -9,13 +9,13 @@ import android.content.Context;
  */
 public class GameConf {
     /**
-     * 连连看的每个方块的图片的宽
+     * 连连看的每个方块的图片的宽   启动的时候赋值
      */
-    public static final int PIECE_WIDTH = 120;
+    public static int PIECE_WIDTH;
     /**
-     * 连连看的每个方块的图片的高s
+     * 连连看的每个方块的图片的高   启动的时候赋值
      */
-    public static final int PIECE_HEIGHT = 120;
+    public static int PIECE_HEIGHT;
     /**
      * 记录游戏的总事件（100秒）.
      */

@@ -4,13 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/room">
-    <!-- 游戏主界面的自定义组件 -->
-    <cn.oyp.link.view.GameView
-        android:id="@+id/gameView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <!-- 水平排列的LinearLayout -->
+
+     <!--水平排列的LinearLayout -->
     <LinearLayout
+        android:id="@+id/controlPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -34,4 +31,11 @@
             android:textSize="20sp"
             tools:text="剩余时间:60" />
     </LinearLayout>
+
+    <!-- 游戏主界面的自定义组件 -->
+    <cn.oyp.link.view.GameView
+        android:id="@+id/gameView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/controlPanel"/>
 </RelativeLayout>

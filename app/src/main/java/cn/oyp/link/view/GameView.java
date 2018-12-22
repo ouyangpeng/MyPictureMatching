@@ -54,7 +54,7 @@ public class GameView extends View {
         // 设置连接线的颜色
         this.paint.setColor(Color.RED);
         // 设置连接线的粗细
-        this.paint.setStrokeWidth(9);
+        this.paint.setStrokeWidth(3);
         // 初始化被选中的图片
         this.selectImage = ImageUtil.getSelectImage(context);
     }

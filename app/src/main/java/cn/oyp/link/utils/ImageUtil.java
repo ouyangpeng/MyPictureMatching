@@ -122,6 +122,15 @@ public class ImageUtil {
         if (drawable instanceof BitmapDrawable) {
             return ((BitmapDrawable) drawable).getBitmap();
         }
+//        Bitmap bitmap = Bitmap.createBitmap(
+//                drawable.getIntrinsicWidth(),
+//                drawable.getIntrinsicHeight(),
+//                drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
+//                        : Bitmap.Config.RGB_565);
+//        Canvas canvas = new Canvas(bitmap);
+//        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
+//                drawable.getIntrinsicHeight());
+
         Bitmap bitmap = Bitmap.createBitmap(GameConf.PIECE_WIDTH, GameConf.PIECE_HEIGHT, Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(bitmap);
         drawable.setBounds(0, 0, GameConf.PIECE_WIDTH, GameConf.PIECE_HEIGHT);
