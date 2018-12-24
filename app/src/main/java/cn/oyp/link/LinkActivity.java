@@ -23,6 +23,7 @@ import cn.oyp.link.board.GameService;
 import cn.oyp.link.board.impl.GameServiceImpl;
 import cn.oyp.link.utils.GameConf;
 import cn.oyp.link.utils.LinkInfo;
+import cn.oyp.link.utils.SizeUtils;
 import cn.oyp.link.view.GameView;
 import cn.oyp.link.view.Piece;
 
@@ -103,7 +104,11 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
      * 初始化游戏的方法
      */
     private void init() {
-        config = new GameConf(GameConf.PIECE_X_SUM, GameConf.PIECE_X_SUM, GameConf.BEGIN_IMAGE_X, GameConf.BEGIN_IMAGE_Y, GameConf.DEFAULT_TIME, this);
+        // 适配不同的屏幕，dp转为px
+        int beginImageX = SizeUtils.dp2Px(this, GameConf.BEGIN_IMAGE_X);
+        int beginImageY = SizeUtils.dp2Px(this, GameConf.BEGIN_IMAGE_Y);
+
+        config = new GameConf(GameConf.PIECE_X_SUM, GameConf.PIECE_X_SUM, beginImageX, beginImageY, GameConf.DEFAULT_TIME, this);
         // 得到游戏区域对象
         gameView = (GameView) findViewById(R.id.gameView);
         // 获取显示剩余时间的文本框

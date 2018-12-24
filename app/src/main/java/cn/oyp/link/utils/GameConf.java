@@ -19,11 +19,11 @@ public class GameConf {
     /**
      * 从哪里开始画第一张图片出现的x座标
      */
-    public final  static int BEGIN_IMAGE_X = 50;
+    public final  static int BEGIN_IMAGE_X = 25;
     /**
      * 从哪里开始画第一张图片出现的x座标
      */
-    public final  static int BEGIN_IMAGE_Y = 200;
+    public final  static int BEGIN_IMAGE_Y = 75;
 
     /**
      * 连连看的每个方块的图片的宽   启动的时候赋值
