@@ -42,7 +42,9 @@
 
 
 
-PS：demo中的图片资源来自于【连连看之水果连连看】APP
+PS：该demo只作为练习学习使用，demo中的图片资源来自于【连连看之水果连连看】APP，如有侵权，可联系删除。
 相关介绍链接为：https://www.wandoujia.com/apps/com.xxstudio.fruitconnect
+你可以下载 https://github.com/ouyangpeng/MyPictureMatching/blob/master/picture/%E8%BF%9E%E8%BF%9E%E7%9C%8B%E4%B9%8B%E6%B0%B4%E6%9E%9C%E8%BF%9E%E8%BF%9E%E7%9C%8B.apk  来玩一玩该上线的APP。
+
 
 
