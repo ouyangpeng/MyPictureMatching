@@ -40,3 +40,9 @@
 </strong></em></span></li><li><span style="font-size:18px; color:#cc0000"><em><strong><a target="_blank" target="_blank" href="http://blog.csdn.net/ouyang_peng/article/details/14116701" style="font-family:'Microsoft YaHei'; line-height:30px">我的Android进阶之旅------&gt;Android疯狂连连看游戏的实现之开发游戏界面(二)</a><br>
 </strong></em></span></li><li><span style="font-size:18px; color:#cc0000"><em><strong><a target="_blank" target="_blank" href="http://blog.csdn.net/ouyang_peng/article/details/14117487" style="font-family:'Microsoft YaHei'; line-height:30px">我的Android进阶之旅------&gt;Android疯狂连连看游戏的实现之状态数据模型(三)</a></strong></em></span></li><li><span style="font-size:18px; color:#cc0000"><em><strong><span style="font-family:'Microsoft YaHei'; line-height:30px"><a target="_blank" target="_blank" href="http://blog.csdn.net/ouyang_peng/article/details/14118001" style="font-family:'Microsoft YaHei'; line-height:30px">我的Android进阶之旅------&gt;Android疯狂连连看游戏的实现之加载界面图片和实现游戏Activity(四)</a></span></strong></em></span></li><li><span style="font-size:18px; color:#cc0000"><em><strong><span style="font-family:'Microsoft YaHei'; line-height:30px"><a target="_blank" target="_blank" href="http://blog.csdn.net/ouyang_peng/article/details/14118213" style="font-family:'Microsoft YaHei'; line-height:30px">我的Android进阶之旅------&gt;Android疯狂连连看游戏的实现之实现游戏逻辑(五)</a></span></strong></em></span></li></ul>
 
+
+
+PS：demo中的图片资源来自于【连连看之水果连连看】APP
+相关介绍链接为：https://www.wandoujia.com/apps/com.xxstudio.fruitconnect
+
+
